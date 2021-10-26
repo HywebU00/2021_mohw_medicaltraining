@@ -76,6 +76,7 @@ body {
         text-align: center;
         color: $color-title;
         position: relative;
+        margin-bottom: 2em;
         &:after{
             content:"";
             display: block;

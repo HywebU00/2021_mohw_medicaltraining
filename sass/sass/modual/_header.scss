@@ -177,7 +177,7 @@
                 height: 38px;
                 border-radius: 30px;
                 transition: .2s ease-in;
-                &:hover{
+                &:hover, &:focus{
                     background: $secondaryColor;
                 }
 

@@ -233,6 +233,7 @@
         @include aspect-ratio(5, 2); //PC版比例
         border-radius: 16px;
         border: 8px solid #fff;
+        background: #fff;
     }
 
     &:after{
