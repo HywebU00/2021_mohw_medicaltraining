@@ -42,7 +42,7 @@ $(function() {
     ////////////// 行動版選單切換////////////
     /*-----------------------------------*/
     _body.prepend('<aside class="sidebar"><div class="m_area"><button type="button" class="sidebarClose">關閉</button></div><div class="menu_overlay"></div></aside>');
-    $('header .container').prepend('<button type="button" class="sidebarCtrl">側欄選單</button><button type="button" class="searchCtrl">查詢</button>');
+    $('header .container').prepend('<button type="button" class="sidebarCtrl">側欄選單</button>');
     var menu_status = false,
         _sidebar = $('.sidebar'),
         _search = $('.search'),
@@ -215,7 +215,7 @@ $(function() {
             _body.removeClass('noscroll');
             _nav.prependTo('.header .container');
             _search.appendTo('.header .container');
-            _menu.appendTo('.header .container');
+            _menu.appendTo('.logeMenuBlock');
             _megamenu.appendTo('.header .container');
             _search.removeClass('m_search');
             $('.m_search').hide();
@@ -309,45 +309,98 @@ $(function() {
         search_mode = false;
     });
     // 固定版頭
-    var headerHeight = Math.floor($('.header').outerHeight(true)),
-        menuH = Math.floor(_menu.outerHeight(true)),
-        // customHeight = headerHeight - menuH;
-        customHeight = 178 - 40; // header高度 - menu高度，每個專案不同，請另外填寫。
+    // var headerHeight = Math.floor($('.header').outerHeight(true)),
+    //     menuH = Math.floor($('.logeMenuBlock').outerHeight(true)),
+    //     customHeight = headerHeight - menuH;
+    //     //customHeight = 178 - 40; // header高度 - menu高度，每個專案不同，請另外填寫。
+    // if ($('header .menu').length > 0) {
+    //     var stickyMenuTop = Math.floor($('.logeMenuBlock').offset().top);
+    //     // console.log(stickyMenuTop);
+    //     $(window).bind("load scroll resize", function(e) {
+    //         ww = _window.outerWidth();
+    //         if (ww >= wwSmall && $(this).scrollTop() > stickyMenuTop) {
+    //             $('.header').addClass('fixed');
+    //             $('.header').css('margin-top', -1 * customHeight);
+    //             $('.main').css('margin-top', headerHeight);
+    //             // $('.main').css('margin-top', 0);
+    //         } else {
+    //             $('.header').removeClass('fixed');
+    //             $('.header').css('margin-top', 0);
+    //             $('.main').css('margin-top', 0);
+    //         }
+    //     });
+    // }
+    // if ($('header .megamenu').length > 0) {
+    //     var stickyMenuTop2 = Math.floor($('header .megamenu').offset().top);
+    //     // console.log(stickyMenuTop);
+    //     headerHeight = Math.floor($('.header').outerHeight(true));
+    //     megamenuH = Math.floor(_megamenu.outerHeight(true));
+    //     $(window).bind("load scroll resize", function(e) {
+    //         ww = _window.outerWidth();
+    //         if (ww >= wwSmall && $(this).scrollTop() > stickyMenuTop2) {
+    //             $('.header').addClass('fixed');
+    //             $('.header').css('margin-top', -1 * customHeight);
+    //             // $('.main').css('margin-top', headerHeight);
+    //             // $('.main').css('margin-top', 0);
+    //         } else {
+    //             $('.header').removeClass('fixed');
+    //             $('.header').css('margin-top', 0);
+    //             $('.main').css('margin-top', 0);
+    //         }
+    //     });
+    // }
+    var resizeNavTimer;
     if ($('header .menu').length > 0) {
-        var stickyMenuTop = Math.floor($('header .menu').offset().top);
-        // console.log(stickyMenuTop);
-        $(window).bind("load scroll resize", function(e) {
-            ww = _window.outerWidth();
-            if (ww >= wwSmall && $(this).scrollTop() > stickyMenuTop) {
-                $('.header').addClass('fixed');
-                $('.header').css('margin-top', -1 * customHeight);
-                $('.main').css('margin-top', headerHeight);
-                // $('.main').css('margin-top', 0);
+        var stickyMenuTop = Math.floor($('header .menu').offset().top),
+            menuH = Math.floor(_menu.outerHeight());
+        function stickynavBar() {
+            windowW = _window.outerWidth();
+            if (windowW >= wwSmall && $(this).scrollTop() > stickyMenuTop) {
+                $('header .menu').addClass('sticky');
+                //$('.main').css('padding-top', menuH);
             } else {
-                $('.header').removeClass('fixed');
-                $('.header').css('margin-top', 0);
-                $('.main').css('margin-top', 0);
+                $('header .menu').removeClass('sticky');
+                $('.main').removeAttr('style');
             }
+        }
+        _window.on('scroll', function (event) {
+            stickynavBar();
         });
+        _window.on('resize', function (event) {
+            clearTimeout(resizeNavTimer);
+            resizeNavTimer = setTimeout(function () {
+                stickyMenuTop = Math.floor($('header .menu').offset().top);
+                $('.main').removeAttr('style');
+                stickynavBar();
+            }, 200);
+        });
+        stickynavBar();
     }
     if ($('header .megamenu').length > 0) {
-        var stickyMenuTop2 = Math.floor($('header .megamenu').offset().top);
-        // console.log(stickyMenuTop);
-        headerHeight = Math.floor($('.header').outerHeight(true));
-        megamenuH = Math.floor(_megamenu.outerHeight(true));
-        $(window).bind("load scroll resize", function(e) {
-            ww = _window.outerWidth();
-            if (ww >= wwSmall && $(this).scrollTop() > stickyMenuTop2) {
-                $('.header').addClass('fixed');
-                $('.header').css('margin-top', -1 * customHeight);
-                // $('.main').css('margin-top', headerHeight);
-                // $('.main').css('margin-top', 0);
+        var stickyMegamenuTop = Math.floor($('header .megamenu').offset().top),
+            megamenuH = Math.floor($('header .megamenu').outerHeight());
+        function stickyMegaNavBar() {
+            windowW = _window.outerWidth();
+            if (windowW >= wwSmall && $(this).scrollTop() > stickyMegamenuTop) {
+                $('header .megamenu').addClass('sticky');
+                $('.main').css('padding-top', megamenuH);
             } else {
-                $('.header').removeClass('fixed');
-                $('.header').css('margin-top', 0);
-                $('.main').css('margin-top', 0);
+                $('header .megamenu').removeClass('sticky');
+                $('.main').removeAttr('style');
             }
+        }
+        _window.on('scroll', function (event) {
+            stickyMegaNavBar();
         });
+        _window.on('resize', function (event) {
+            clearTimeout(resizeNavTimer);
+            resizeNavTimer = setTimeout(function () {
+                stickyMenuTop = Math.floor($('header .megamenu').offset().top);
+                $('.main').removeAttr('style');
+                stickyMegaNavBar();
+            }, 200);
+        });
+        stickyMegaNavBar();
     }
     /*-----------------------------------*/
     //////////// notice訊息區塊 ////////////

@@ -3,7 +3,7 @@ $(function() {
     // 首頁輪播
     $('.mpSlider').slick({
         mobileFirst: true,
-        dots: true,
+        dots: false,
         arrows: true,
         infinite: true,
         speed: 500,
@@ -140,6 +140,42 @@ $(function() {
             }
         }]
     });
+    $('.photo_slider').slick({
+        dots: true,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: false,
+        autoplaySpeed: 1500,
+        lazyLoaded: true,
+        lazyLoad: 'ondemand',
+        ease: 'ease',
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                infinite: true,
+                dots: true
+            }
+        }, {
+            breakpoint: 545,
+            settings: {
+                arrows: true,
+                slidesToShow: 2,
+                slidesToScroll: 2
+            }
+        }, {
+            breakpoint: 480,
+            settings: {
+                arrows: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false
+            }
+        }]
+    });
     // cp_photo
     $('.Slider-for').on('init reInit afterChange', function(event, slick, currentSlide) {
         var i = (currentSlide ? currentSlide : 0) + 1;
@@ -186,3 +222,34 @@ $(function() {
         });
     });
 });
+
+//svg 變色
+
+jQuery('img.svg').each(function() {
+    var $img = jQuery(this);
+    var imgID = $img.attr('id');
+    var imgClass = $img.attr('class');
+    var imgURL = $img.attr('src');
+    jQuery.get(imgURL, function(data) {
+        var $svg = jQuery(data).find('svg');
+        if (typeof imgID !== 'undefined') { $svg = $svg.attr('id', imgID); }
+        if (typeof imgClass !== 'undefined') { $svg = $svg.attr('class', imgClass + ' replaced-svg'); } $svg = $svg.removeAttr('xmlns:a');
+        $img.replaceWith($svg);
+    }, 'xml');
+});
+
+
+
+// $(document).ready(function() {
+//     $('img[src$=".svg"]').each(function() {
+//         var $img = jQuery(this);
+//         var imgURL = $img.attr('src');
+//         var attributes = $img.prop("attributes");
+//         $.get(imgURL, function(data) {
+//             var $svg = jQuery(data).find('svg');
+//             tags $svg = $svg.removeAttr('xmlns:a');
+//             $.each(attributes, function() { $svg.attr(this.name, this.value); });
+//             $img.replaceWith($svg);
+//         }, 'xml');
+//     });
+// });

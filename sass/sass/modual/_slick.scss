@@ -129,22 +129,22 @@
 /* 上一則 位置 圖片*/
 .slick-prev {
     left: 25px;
-    background: url('../images/slick/icon_arrow_left_inverse.png') center center no-repeat RGBA(255, 255, 255, .5);
+    background: url('../images/slick/icon_arrow_left.svg') center center no-repeat RGBA(210, 210, 210, .5);
     background-size: 30px 30px;
     /* 箭頭 hover及focus 樣式 */
     &:hover, &:focus {
-        background: url('../images/slick/icon_arrow_left_inverse.png') center center no-repeat RGBA(255, 255, 255, .8);
+        background: url('../images/slick/icon_arrow_left.svg') center center no-repeat RGBA(210, 210, 210, .8);
         background-size: 30px 30px;
     }
 }
 /* 下一則 位置 圖片*/
 .slick-next {
     right: 25px;
-    background: url('../images/slick/icon_arrow_right_inverse.png') center center no-repeat RGBA(255, 255, 255, .5);
+    background: url('../images/slick/icon_arrow_right.svg') center center no-repeat RGBA(210, 210, 210, .5);
     background-size: 30px 30px;
     /* 箭頭 hover及focus 樣式 */
     &:hover, &:focus {
-        background: url('../images/slick/icon_arrow_right_inverse.png') center center no-repeat RGBA(255, 255, 255, .8);
+        background: url('../images/slick/icon_arrow_right.svg') center center no-repeat RGBA(210, 210, 210, .8);
         background-size: 30px 30px;
     }
 }
@@ -231,10 +231,41 @@
     @include gutter(0);
     .img-container {
         @include aspect-ratio(5, 2); //PC版比例
-        @include screen('mobile') {
-            @include aspect-ratio(5, 3); //Mobile版比例
-        }
+        border-radius: 16px;
+        border: 8px solid #fff;
     }
+
+    &:after{
+        content:"";
+        position: absolute;
+        top: .5em;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: calc(100% - 4em);
+        border-radius: 60px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+        z-index: 0; 
+    }
+
+    .slick-list{
+        z-index: 1;
+    }
+
+    .slick-prev, .slick-next{
+        width: 40px !important;
+        height: 40px !important;
+        border-radius: 30px;
+        top: calc(100% - 36px);
+        left: 8px;
+        background-size: 20px;
+        opacity: .7;
+    }
+
+    .slick-next{
+        left: 58px;
+    }
+
     .slick-prev {
         @include screen('mobile') {
             top: 35%;

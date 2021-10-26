@@ -17,12 +17,38 @@ body {
 }
 // 最外圍預設為100%
 .wrapper {
+    position: relative;
     width: 100%;
     margin: 0px auto;
+    // background: url(../images/top_bg.svg) no-repeat;
+    // background-position: left calc( (100% - 1200px) / 2 + 150px) top 0;
     @include screen('mobile') {
         background: #FFF;
         overflow: hidden;
         overflow-y: auto;
+    }
+    &:before{
+        content:"";
+        position: absolute;
+        display: block;
+        width: calc(1200px + (100% - 1200px) / 2 - 100px);
+        height: 620px;
+        top: 0;
+        right: 0;
+        background-image: url(../images/bg3.png), url(../images/top_bg1.svg);
+        background-position: top right, bottom left; 
+        background-repeat: no-repeat;
+        background-size: contain, cover;
+
+        @media screen and (max-width: 1200px){
+            width: calc(100% - 100px);
+        }
+
+        @include screen('mobile'){
+            width: 100%;
+            height: 400px;
+            top: 60px;
+        }
     }
 }
 // 整體共用container樣式，請注意首頁切版頁面的整齊
@@ -30,14 +56,36 @@ body {
     padding: 0;
     margin: 0 auto;
     max-width: $container-max; //請看_variable.scss
+    @media screen and (max-width: 1200px){
+        padding: 0 15px;
+    }
 }
 .main {
     position: relative;
     margin: 0 auto;
     padding: 1em 0 0 0;
     // 可先設定一個中央區塊最大寬，限制accesskey對齊
+    @include screen('mobile'){
+        margin-top: 60px;
+    }
     h2 {
         line-height: 1.25em;
+        font-size: 1.875em;
+        font-family: 'Century Gothic';
+        text-transform:uppercase;
+        text-align: center;
+        color: $color-title;
+        position: relative;
+        &:after{
+            content:"";
+            display: block;
+            width: 120px;
+            height: 3px;
+            position: absolute;
+            bottom: -15px;
+            left: calc(50% - 60px);
+            @include gradient($color-purple, $lightColor, horizontal);
+        }
     }
 }
 ////////////////////////////////////////////////////////////
