@@ -211,17 +211,19 @@ a.more {
         position: absolute;
         display: block;
         width: 100%;
-        height: 280px;
+        height: 350px;
         left: 0;
-        bottom: calc(100% - 2px);
+        bottom: calc(100% - 4px);
         background: url(../images/bg5.svg) bottom left no-repeat;
         background-size: 100%;
+        animation: curve 10s ease-in infinite;
+        @include screen('tablet'){
+            animation: none;
+        }
     }
     h2{
         color: #fff;
-    }
-}
-
+    }}
 .medicalSpecialties_list{
     ul{
         @include li-reset;
@@ -263,6 +265,7 @@ a.more {
             padding: 2.25em 1em .75em;
             text-align: center;
             transition: .3s ease-in;
+
             @include screen('xs_mobile'){
                 min-height: 70px;
                 justify-content: flex-start;
@@ -341,6 +344,18 @@ a.more {
         bottom: calc(100% - 2px);
         background: url(../images/bg7.svg) bottom left no-repeat;
         background-size: 100%;
+    }
+}
+
+@keyframes curve {
+    0% {
+        background-size: 120%;
+    }
+    50% {
+        background-size: 100%;
+    }
+    100% {
+        background-size: 120%;
     }
 }
 

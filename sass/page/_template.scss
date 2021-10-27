@@ -39,6 +39,7 @@ body {
         background-position: top right, bottom left; 
         background-repeat: no-repeat;
         background-size: contain, cover;
+        //transform-origin: top right;
 
         @media screen and (max-width: 1200px){
             width: calc(100% - 100px);
@@ -58,6 +59,15 @@ body {
         }
     }
 }
+
+// @keyframes bgIn {
+//     0% {
+//         opacity: .5;
+//     }
+//     100% {
+//         opacity: 1;
+//     }
+// }
 // 整體共用container樣式，請注意首頁切版頁面的整齊
 .container {
     padding: 0;
