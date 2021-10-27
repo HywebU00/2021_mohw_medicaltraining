@@ -110,8 +110,9 @@
     position: absolute;
     top: 40%;
     display: block;
-    width: 40px !important;
-    height: 60px !important;
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50%;
     padding: 0 !important;
     min-width: auto;
     z-index: 2;
@@ -120,26 +121,28 @@
     outline: none;
     box-shadow: none;
     transition: .3s ease-out;
+    opacity: .6;
     &:hover, &:focus {
         border: none !important;
         outline: none;
         box-shadow: 0px 0px 0px 2px $aFocus inset;
+        opacity: 1;
     }
 }
 /* 上一則 位置 圖片*/
 .slick-prev {
-    left: 25px;
-    background: url('../images/slick/icon_arrow_left.svg') center center no-repeat RGBA(210, 210, 210, .5);
+    left: 0;
+    background: url('../images/slick/icon_arrow_left.svg') center center no-repeat RGBA(210, 210, 210, .8);
     background-size: 30px 30px;
     /* 箭頭 hover及focus 樣式 */
     &:hover, &:focus {
-        background: url('../images/slick/icon_arrow_left.svg') center center no-repeat RGBA(210, 210, 210, .8);
+        background: url('../images/slick/icon_arrow_left.svg') center center no-repeat RGBA(210, 210, 210, 1);
         background-size: 30px 30px;
     }
 }
 /* 下一則 位置 圖片*/
 .slick-next {
-    right: 25px;
+    right: 0;
     background: url('../images/slick/icon_arrow_right.svg') center center no-repeat RGBA(210, 210, 210, .5);
     background-size: 30px 30px;
     /* 箭頭 hover及focus 樣式 */
@@ -227,23 +230,30 @@
 // 首頁大圖輪播 
 .mpSlider {
     width: 100%;
-    padding-bottom: 3em;
     @include gutter(0);
+
+    // @include screen('tablet'){
+    //     padding-bottom: 0;
+    // }
+
     .img-container {
         @include aspect-ratio(5, 2); //PC版比例
         border-radius: 16px;
         border: 8px solid #fff;
         background: #fff;
+        @include screen('mobile'){
+            border-width: 6px;
+        }
     }
 
     &:after{
         content:"";
         position: absolute;
-        top: .5em;
-        left: 0;
+        top: 15px;
+        left: 5px;
         display: block;
-        width: 100%;
-        height: calc(100% - 4em);
+        width: calc(100% - 10px);
+        height: calc(100% - 30px);
         border-radius: 60px;
         box-shadow: 0 0 20px rgba(0, 0, 0, .2);
         z-index: 0; 
@@ -257,10 +267,13 @@
         width: 40px !important;
         height: 40px !important;
         border-radius: 30px;
-        top: calc(100% - 36px);
+        top: calc(100% + 10px);
         left: 8px;
         background-size: 20px;
         opacity: .7;
+        @include screen('tablet'){
+            top: calc(50% - 20px);
+        }
     }
 
     .slick-next{
@@ -268,47 +281,74 @@
     }
 
     .slick-prev {
-        @include screen('mobile') {
-            top: 35%;
-            left: 2%;
+        @include screen('tablet') {
+            left: -5px;
         }
     }
     .slick-next {
-        @include screen('mobile') {
-            top: 35%;
-            right: 2%;
+        @include screen('tablet') {
+            left: auto;
+            right: -5px;
         }
     }
 }
-// slick._scss
-// adSlider
-.adSlider {
-    @include gutter(70px);
-    margin-bottom: 20px;
-    @include screen('mobile') {
-        @include gutter();
-    }
-    .slick-prev {
-        left: 0;
-        top: 0;
-    }
-    .slick-next {
-        right: 0;
-        top: 0;
-    }
-    .img-container {
-        width: 165px;
-        height: 55px;
-        margin: 0px 15px;
-        a {
-            display: block;
-            img {
-                margin: 0 auto;
-                object-fit: contain;
+
+.photo_slider{
+    padding: 0 1.2em;
+    margin-bottom: 2em;
+    .img-container{
+        margin: 0 1em;
+        border-radius: $rounded-angle;
+        a{
+            img{
+                transition: .3s ease-in;
+            }
+            .caption {
+                transition: .3s ease-in;
+                bottom: -3em;
+            }
+            &:hover, &:focus{
+                img{
+                    transform: scale(1.1);
+                }
+                .caption {
+                    bottom: 0;
+                }
             }
         }
     }
 }
+
+// slick._scss
+// adSlider
+// .adSlider {
+//     @include gutter(70px);
+//     margin-bottom: 20px;
+//     @include screen('mobile') {
+//         @include gutter();
+//     }
+//     .slick-prev {
+//         left: 0;
+//         top: 0;
+//     }
+//     .slick-next {
+//         right: 0;
+//         top: 0;
+//     }
+//     .img-container {
+//         width: 165px;
+//         height: 55px;
+//         margin: 0px 15px;
+//         a {
+//             display: block;
+//             img {
+//                 margin: 0 auto;
+//                 object-fit: contain;
+//             }
+//         }
+//     }
+// }
+
 //  slick燈箱
 .lightbox_slider {
     h3 {

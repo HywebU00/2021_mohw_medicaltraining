@@ -141,7 +141,7 @@ $(function() {
         }]
     });
     $('.photo_slider').slick({
-        dots: true,
+        dots: false,
         infinite: false,
         speed: 500,
         slidesToShow: 3,
@@ -221,6 +221,7 @@ $(function() {
             e.preventDefault();
         });
     });
+
 });
 
 //svg 變色

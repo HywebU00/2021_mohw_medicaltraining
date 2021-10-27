@@ -86,10 +86,13 @@ a.more {
 
 .mpSliderBlock {
     margin: 2em 0 1em;
+    @include screen('tablet'){
+        margin: 0;
+    }
 
     .container {
         padding-left: 270px;
-        @include screen('mobile'){
+        @include screen('tablet'){
             padding: 0 15px;
         }
     }
@@ -108,8 +111,19 @@ a.more {
         font-family: 'Century Gothic';
         text-align: left;
         text-transform: none;
+        margin: .5em 0;
+        font-weight: bold;
         &:after{
             content: none;
+        }
+
+        @include screen('tablet'){
+            width: 100%;
+            position: static;
+        }
+
+        @include screen('mobile'){
+            font-size: 1.5em;
         }
 
         span {
@@ -158,7 +172,6 @@ a.more {
             a{
                 color: $color-word2;
                 transition: .2s ease-in;
-                font-weight: bold;
                 margin-right: .5em;
 
                 @include screen('mobile'){
@@ -184,8 +197,13 @@ a.more {
     }
 }
 
+//MEDICAL SPECIALTIES
 .medical_specialties{
-    background: $color-bg;
+    background-color: $color-bg;
+    background-image: url(../images/bg4.svg), url(../images/bg4.svg);
+    background-repeat: no-repeat;
+    background-position: top 0 left -200px, bottom -80px right -450px;
+    background-size: 1000px;
     position: relative;
     padding-top: 200px; 
     &:before{
@@ -213,23 +231,44 @@ a.more {
     }
     li{
         flex-basis: calc(25% - 2em);
-        margin: 2em 1em;
+        margin: 1.8em 1em;
+        @include screen('tablet'){
+            flex-basis: calc(33.33333% - 2em);
+        }
+        @include screen('mobile'){
+            margin: 1.5em .5em;
+            flex-basis: calc(50% - 1em);
+        }
+        @include screen('xs_mobile'){
+            margin: .5em 0 .5em 35px;
+            flex-basis: 100%;
+        }
         a{
             display: flex;
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
             position: relative;
-            font-size: 1.375em;
+            font-size: 1.25em;
+            line-height: 1.4em;
+            font-family: 'Century Gothic';
+            text-transform: capitalize;
             color: $secondaryColor;
-            min-height: 130px;
+            height: 100%;
+            min-height: 120px;
             font-weight: bold;
             background: $color-lightblue;
-            border-radius: 16px;
+            border-radius: $rounded-angle;
             border: 4px solid #fff;
-            padding: 2em 1em 1em;
+            padding: 2.25em 1em .75em;
             text-align: center;
             transition: .3s ease-in;
+            @include screen('xs_mobile'){
+                min-height: 70px;
+                justify-content: flex-start;
+                text-align: left;
+                padding: .5em 1em .5em 45px;
+            }
             &:hover, &:focus{
                 background: #fff;
                 box-shadow: 0 0 15px rgba(0,0,0, 0.3);
@@ -256,9 +295,19 @@ a.more {
             align-items: center;
             justify-content: center;
             transition: .3s ease-in;
+            @include screen('xs_mobile'){
+                width: 70px;
+                height: 70px;
+                top: calc(50% - 35px);
+                left: -35px;
+            }
             .svg{
                 width: 50px;
                 max-height: 50px;
+                @include screen('xs_mobile'){
+                    width: 40px;
+                    max-height: 40px;
+                }
             }
         }
     }
@@ -280,7 +329,8 @@ a.more {
 
 .photo_gallery{
     position: relative;
-    background: $color-bg2;
+    background: $color-bg2 url(../images/bg4-2.svg) left -100px bottom -100px no-repeat;
+    background-size: 1100px;
     &:before{
         content:"";
         position: absolute;

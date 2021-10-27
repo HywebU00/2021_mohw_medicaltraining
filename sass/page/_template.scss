@@ -20,8 +20,8 @@ body {
     position: relative;
     width: 100%;
     margin: 0px auto;
-    // background: url(../images/top_bg.svg) no-repeat;
-    // background-position: left calc( (100% - 1200px) / 2 + 150px) top 0;
+    background: url(../images/top_bg2.svg) top 150px left no-repeat;
+    background-size: 450px;
     @include screen('mobile') {
         background: #FFF;
         overflow: hidden;
@@ -46,8 +46,15 @@ body {
 
         @include screen('mobile'){
             width: 100%;
-            height: 400px;
+            height: 300px;
             top: 60px;
+        }
+        @include screen('xs_mobile'){
+            height: 220px;
+        }
+
+        @media screen and (max-width: 400px){
+            height: 180px;
         }
     }
 }

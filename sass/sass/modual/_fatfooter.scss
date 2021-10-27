@@ -19,7 +19,7 @@
         min-width: 6em;
         color: #FFF;
         border: none;
-        background: $aHover;
+        background: rgba(0,0,0, .5);
         position: absolute;
         right: 1%;
         z-index: 90;
@@ -70,17 +70,21 @@
             @include li-reset;
 
             li {
-                flex:1 1 16%;
+                flex:1 1 12.5%;
                 box-sizing: border-box;
 
                 a {
                     line-height: 1.5;
                     display: block;
                     font-weight: bold;
-                    padding: .5em 0px;
+                    padding: .5em .5em .5em 0;
                     box-sizing: border-box;
+                    color: #eee;
+                    min-height: 3em;
+                    text-transform: capitalize;
                     &:hover{
                         box-shadow: none;
+                        color: #fff;
                     }
                 }
                 ul {
@@ -98,13 +102,14 @@
 
                         a {
                             display: block;
-                            @include aSetting_nocolor;
+                            color: #ddd;
                             font-weight: normal;
                             text-align: left;
                             font-size: .938em;
                             line-height: 1.5em;
                             padding: .5em 0;
                             background: none;
+                            min-height: auto;
                         }
                     }
                     //第三層關閉

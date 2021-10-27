@@ -9,6 +9,7 @@
         position: fixed;
         width: 100%;
         background: #FFF;
+        box-shadow: 0 2px 5px rgba(0,0,0, .1);
     }
 
     // 虛擬底色 - navigation bg
@@ -50,6 +51,9 @@
         max-width: $container-max;
         overflow: visible;
         position: relative; // menu
+        @include screen('mobile'){
+            padding: 0;
+        }
 
         .sidebarCtrl {
             display: none;
@@ -108,6 +112,12 @@
 
         a {
             display: block;
+            @include screen('mobile'){
+                display: flex;
+                height: 100%;
+                align-items: center;
+                justify-content: center;
+            }
         }
 
         img {
