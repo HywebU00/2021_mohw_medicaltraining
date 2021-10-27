@@ -4,6 +4,8 @@
 // more按鈕
 a.more {
     display: block;
+    position: relative;
+    z-index: 10;
     width: 10em;
     height: 42px;
     line-height: 42px;
