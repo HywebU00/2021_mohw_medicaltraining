@@ -28,6 +28,11 @@ body {
     font-family:$font-family;
     -webkit-text-size-adjust: none;
 }
+
+h2{
+    font-weight: bold;
+}
+
 a {
     @include aSetting();
 }
