@@ -321,6 +321,8 @@ a.more {
 .statistics{
     background: url(../images/bg6.jpg) bottom left no-repeat;
     background-size: cover;
+    background-attachment: fixed;
+
     h3{
         color: $color-word2;
     }
@@ -330,6 +332,10 @@ a.more {
     background: #fff;
     box-shadow: 0 0 10px rgba(0,0,0, 0.1);
     margin-bottom: 2em;
+    img{
+        width: 100%;
+        height: auto;
+    }
 }
 
 .photo_gallery{
