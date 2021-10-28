@@ -230,6 +230,8 @@
 // 首頁大圖輪播 
 .mpSlider {
     width: 100%;
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.2) -15px 0px 20px -19px, rgba(0, 0, 0, 0.2) 15px 0px 20px -19px;
     @include gutter(0);
 
     // @include screen('tablet'){
@@ -238,26 +240,27 @@
 
     .img-container {
         @include aspect-ratio(5, 2); //PC版比例
-        border-radius: 16px;
+        border-radius: 1em;
         border: 8px solid #fff;
         background: #fff;
+        
         @include screen('mobile'){
             border-width: 6px;
         }
     }
 
-    &:after{
-        content:"";
-        position: absolute;
-        top: 15px;
-        left: 5px;
-        display: block;
-        width: calc(100% - 10px);
-        height: calc(100% - 30px);
-        border-radius: 60px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, .2);
-        z-index: 0; 
-    }
+    // &:after{
+    //     content:"";
+    //     position: absolute;
+    //     top: 15px;
+    //     left: 5px;
+    //     display: block;
+    //     width: calc(100% - 10px);
+    //     height: calc(100% - 30px);
+    //     border-radius: 60px;
+    //     box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+    //     z-index: 0; 
+    // }
 
     .slick-list{
         z-index: 1;

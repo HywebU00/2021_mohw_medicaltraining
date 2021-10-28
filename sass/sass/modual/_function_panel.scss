@@ -109,6 +109,14 @@ div.function{
         }
     }
 }
+
+.functionBlock{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
 // 放進function_panel樣式
 .function_panel {
     .font_size{
@@ -224,8 +232,8 @@ div.function{
                 height: 60%;
                 top: 20%;
                 left: 20%;
-                background: url(../images/basic/icon_share.svg) no-repeat center center  !important;
-                background-size: 24px !important;
+                background: url(../images/basic/icon_share.svg) no-repeat left center  !important;
+                //background-size: 24px !important;
             }
             // img {
             //   width: 60%;
