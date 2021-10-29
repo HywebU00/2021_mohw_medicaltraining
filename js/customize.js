@@ -222,6 +222,20 @@ $(function() {
         });
     });
 
+    // search開關
+    $('.btn-toggle').click(function(e) {
+        $('.search_form').stop(true, true).slideToggle(function() {
+            if ($(this).is(':visible')) {
+                $('.btn-toggle').html("CLOSE");
+                $('.btn-toggle').attr('name', 'CLOSE');
+            } else {
+                $('.btn-toggle').html("SEARCH");
+                $('.btn-toggle').attr('name', 'SEARCH');
+            }
+        });
+        $(this).stop(true, true).toggleClass('close');
+    });
+
 });
 
 //svg 變色

@@ -4,7 +4,7 @@
 //---------------------------------------------------顏色---------//
 // 定義顏色 此顏色可自由變換
 $primaryColor: #0c6cb7; //主色
-$secondaryColor: #359b91; //輔色
+$secondaryColor: #1C8278; //輔色
 $lightColor: #30adf0; //點綴
 //$linkColor: #0066cc; //連結
 // 但注意真實顏色與語意的關聯必須易於辨識
@@ -26,6 +26,7 @@ $color-line: #e2e2e2;
 $color-menuSticky: #2b65ad;
 $color-title: #236fc8;
 $btn-word: #222; //按鈕字的顏色
+$btn-search: #a74785;
 // 連結顏色
 $aColor: $primaryColor;
 $aHover: darken($aColor, 10);

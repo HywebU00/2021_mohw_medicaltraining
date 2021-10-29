@@ -108,7 +108,7 @@ $btn-radius:.2em;
 }
 .btn-search {
     // @extend %btn;
-    @include btn_setting(lighten($primaryColor, 5), #FFF);
+    @include btn_setting($btn-search, #FFF);
 }
 // 主要按鈕
 .btn-primary{
