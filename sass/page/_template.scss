@@ -267,7 +267,7 @@ body {
     }
 }
 
-.album, .video{
+.album, .video, .link{
     margin-top: 1em;
     ul{
         @include li-reset;
@@ -301,12 +301,6 @@ body {
     }
 }
 
-.album{
-    // .thumbnail{
-    //     border-radius: 2px;
-    // }
-}
-
 .video{
     .thumbnail{
         .img-container {
@@ -332,6 +326,25 @@ body {
                     opacity: .9;
                 }
             }
+        }
+    }
+}
+
+.link{
+    .thumbnail{
+        .img-container{
+            @include aspect-ratio(2, 1);
+            margin: 0;
+            img{
+                object-fit: contain;
+                padding: .5em;
+            }
+        }
+        .caption{
+            padding: .5em 1em;
+            width: 100%;
+            background: $color-bg2;
+            text-align: center;
         }
     }
 }
