@@ -1,5 +1,5 @@
 .pagination {
-    margin: .5em auto 1em auto;
+    margin: 1em auto;
     padding: 0;
     display: block;
     text-align: center;
@@ -166,7 +166,7 @@
 }
 @include screen('mobile') {
     .pagination .total select.form-control {
-        margin: 0px 0px;
+        margin: 0px;
         text-align: center;
     }
 }
