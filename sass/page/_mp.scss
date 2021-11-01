@@ -140,11 +140,39 @@ a.more {
 }
 
 .mp{
+    overflow: hidden;
     >section{
         &+section{
             padding: 1em 0 3em; 
         } 
     }
+    h2{
+        line-height: 1.25em;
+        font-size: 1.875em;
+        font-family: 'Century Gothic';
+        text-transform:uppercase;
+        text-align: center;
+        color: $color-title;
+        position: relative;
+        margin: 1em 0 2em 0;
+        &:after{
+            content:"";
+            display: block;
+            width: 120px;
+            height: 3px;
+            position: absolute;
+            bottom: -15px;
+            left: calc(50% - 60px);
+            @include gradient($color-purple, $lightColor, horizontal);
+        }
+    }
+
+    h3{
+        font-family: 'Century Gothic';
+        font-size: 1.375em;
+        color: $color-word2;
+    }
+    
     .hot_news{
         padding-bottom: 4em;
     }

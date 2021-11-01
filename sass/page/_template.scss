@@ -85,26 +85,7 @@ body {
     @include screen('mobile'){
         margin-top: 60px;
     }
-    h2 {
-        line-height: 1.25em;
-        font-size: 1.875em;
-        font-family: 'Century Gothic';
-        text-transform:uppercase;
-        text-align: center;
-        color: $color-title;
-        position: relative;
-        margin: 1em 0 2em 0;
-        &:after{
-            content:"";
-            display: block;
-            width: 120px;
-            height: 3px;
-            position: absolute;
-            bottom: -15px;
-            left: calc(50% - 60px);
-            @include gradient($color-purple, $lightColor, horizontal);
-        }
-    }
+    
 }
 ////////////////////////////////////////////////////////////
 // 為了與首頁區隔，請在內頁加上innerpage ClassName
@@ -113,11 +94,20 @@ body {
         //@include gutter();
         display: flex;
     }
-
     h2.title{
+        line-height: 1.25em;
+        font-size: 1.875em;
+        font-family: 'Century Gothic';
+        text-transform:uppercase;
         text-align: left;
+        color: $color-title;
+        position: relative;
+        margin: .5em 0 1em 0;
         padding-left: 15px;
         &:after{
+            content:"";
+            display: block;
+            position: absolute;
             width: 4px;
             height: 100%;
             left: 0;
@@ -126,11 +116,7 @@ body {
         }
     }
 
-    h3{
-        font-family: 'Century Gothic';
-        font-size: 1.375em;
-        color: $color-word2;
-    }
+    
     .center_block {
         flex: none;
         flex-basis: 100%;

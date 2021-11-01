@@ -65,8 +65,9 @@
                 // 第二層選單樣式
                 li {
                     float: none;
+                    border-bottom: 1px solid $color-line;
                     a {
-                        padding: .5em 1.2em;
+                        padding: .6em 1.2em;
                         color: $color-word;
                         font-weight: bold;
                         &:hover, &:focus {
