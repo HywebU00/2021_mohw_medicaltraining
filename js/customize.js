@@ -53,54 +53,24 @@ $(function() {
             }
         }]
     });
-    //燈箱slick+lightBox組合
+
     $('.cp_slider').slick({
-        dots: true,
+        mobileFirst: true,
+        dots: false,
+        arrows: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        autoplay: false,
-        autoplaySpeed: 1500,
-        pauseOnHover: true,
-        pauseOnFocus: true,
-        focusOnSelect: true,
-        accessibility: true,
+        autoplay: true,
+        fade: true,
+        lazyLoaded: true,
         lazyLoad: 'ondemand',
         ease: 'ease',
-        responsive: [{
-            breakpoint: 768,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2,
-                infinite: true,
-                dots: true
-            }
-        }, {
-            breakpoint: 545,
-            settings: {
-                arrows: true,
-                slidesToShow: 2,
-                slidesToScroll: 2
-            }
-        }, {
-            breakpoint: 480,
-            settings: {
-                arrows: true,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                arrows: false
-            }
-        }]
+        customPaging: function(slider, i) {
+            var title = $(slider.$slides[i]).find('img').attr('alt').trim();
+            return $('<button type="button" aria-label="' + title + '"/>').text(title);
+        }
     });
-    $('.cp_slider').slickLightbox({
-        caption: 'caption',
-        lazyLoad: 'ondemand',
-        useHistoryApi: 'true',
-        ease: 'ease',
-        lazy: true
-    });
-    // 
+
     $('.cppic_slider').slick({
         dots: false,
         infinite: false,
@@ -121,7 +91,6 @@ $(function() {
                 slidesToShow: 2,
                 slidesToScroll: 2,
                 infinite: true,
-                dots: true
             }
         }, {
             breakpoint: 545,
@@ -136,7 +105,7 @@ $(function() {
                 arrows: true,
                 slidesToShow: 1,
                 slidesToScroll: 1,
-                arrows: false
+                arrows: true,
             }
         }]
     });
@@ -251,4 +220,19 @@ jQuery('img.svg').each(function() {
         if (typeof imgClass !== 'undefined') { $svg = $svg.attr('class', imgClass + ' replaced-svg'); } $svg = $svg.removeAttr('xmlns:a');
         $img.replaceWith($svg);
     }, 'xml');
+});
+
+//fancybox
+$('[data-fancybox="images"]').fancybox({
+    buttons: [
+        'slideShow',
+        'zoom',
+        'fullScreen',
+        'download',
+        'close'
+
+    ],
+    thumbs: {
+        autoStart: true,
+    }
 });

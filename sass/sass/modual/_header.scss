@@ -192,7 +192,8 @@
                 }
 
                 img {
-                    object-fit: contain;
+                   width: 24px;
+                   max-height: 24px;
                 }
             }
         }

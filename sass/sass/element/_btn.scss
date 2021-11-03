@@ -1,7 +1,7 @@
 // 按鈕設定
 $btn-font-color:$btn-word;
 $btn-border:darken($btn-font-color, 5);
-$btn-padding:.5em 1.25em;
+$btn-padding:.5em 1.5em;
 $btn-radius:.2em;
 // 按鈕外框
 .btn_grp {
@@ -54,6 +54,7 @@ $btn-radius:.2em;
     padding: $btn-padding;
     min-width: 4em;
     margin:.25em .1em;
+    border-radius: .2em;
     
     i {
         margin-right: .25em;
@@ -149,6 +150,7 @@ $btn-radius:.2em;
         border: solid 1px #c3c3c3!important;
     }
 }
+
 
 // 返回
 .btn-back{

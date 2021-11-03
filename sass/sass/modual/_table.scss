@@ -18,8 +18,12 @@ table {
     //     }
     // }
     td {
-        padding: .5em;
+        padding: .8em .5em;
         text-align: left;
+        ul, ol{
+            margin: 0;
+            padding-left: 1.5em;
+        }
     }
     td{
         border: #ddd 1px solid;
@@ -88,6 +92,36 @@ table {
         }
     }
 }
+
+.table_th_top{
+    @include screen('xs_mobile') {
+        background-color: transparent !important; //Force table to not be like tables anymore
+        thead,
+        tbody,
+        th,
+        td,
+        tr {
+            display: block;
+        }
+        thead tr {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+        tr {
+            border: 1px solid #ccc;
+            margin-bottom: 10px; // background-color: #333;
+        }
+        td {
+            border: none !important;
+            border-bottom: 1px solid #eee !important;
+            position: relative;
+            white-space: normal;
+            text-align: left;
+        }
+    }
+}
+
 // fix_th_table
 .fix_th_table {
     margin: 1em 0;

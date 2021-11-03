@@ -4,62 +4,78 @@
             a {
                 @include aSetting_nocolor;
             }
+
             &.date {
                 text-align: center;
                 color: #666;
+
                 @include screen('mobile') {
                     text-align: left;
                 }
             }
+
             &.num {
                 text-align: center;
                 color: #666;
+
                 @include screen('mobile') {
                     text-align: left;
                 }
             }
         }
     }
+
     .list {
-        &>ul, ol {
+
+        &>ul,
+        ol {
             list-style-type: none;
             padding: 0;
             border-top: 2px solid $primaryColor;
+
             &>li {
                 padding: 1em 0;
                 border-bottom: 1px solid #DDD;
                 position: relative; // outline: 1px solid blue;
+
                 .tag {
                     margin-left: 2em;
                 }
+
                 &>a {
                     display: block;
                     padding-left: 2em;
                     position: relative;
                     line-height: 1.45em;
                     color: $color-word;
+
                     &:hover {
                         color: $aHover;
                     }
+
                     .num {
                         width: 1.5em;
                         text-align: right;
                         position: absolute;
                         top: 0;
                         left: 0;
+
                         &:after {
                             content: ".";
                             display: inline-block;
                         }
                     }
                 }
+
                 span.dept {
                     display: inline-block;
                     font-size: .938em;
+
                     @include screen("mobile") {
                         display: block;
                     }
                 }
+
                 time {
                     display: block;
                     color: #AAA;
@@ -68,6 +84,131 @@
             }
         }
     }
+}
+
+.card_list {
+    ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -0.8em 0 -0.8em;
+    }
+
+    li, .card_item {
+        padding: 0 .8em;
+        margin-bottom: 1.5em;
+        flex-basis: 25%;
+
+        @include screen("tablet") {
+            flex-basis: 33.33333%;
+        }
+
+        @include screen("mobile") {
+            flex-basis: 50%;
+        }
+
+        @include screen("xs_mobile") {
+            flex-basis: 100%;
+        }
+
+        a {
+            display: flex;
+            flex-wrap: wrap;
+            height: 100%;
+            border-radius: $rounded-angle;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 8px 0px;
+            padding: 1em 0 0 0;
+            overflow: hidden;
+            background: #fff;
+            transition: .2s ease-in;
+            &:hover{
+                background: $primaryColor;
+                transform: scale(1.03);
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+                .dep, .course, .hospital{
+                    color: #fff;
+                }
+                .hospital{
+                    &:before{
+                        background-image: url(../images/icon_hospital_invert.svg);
+                        opacity: 1;
+                    }
+                    &:after{
+                        background: rgba(255, 255, 255, .3);
+                    }
+                }
+            }
+
+            .dep {
+                width: 100%;
+                color: $secondaryColor;
+                padding: 0 1em;
+                margin-bottom: 1em;
+                font-size: .938em;
+                transition: .2s ease-in;
+            }
+
+            .course {
+                color: $primaryColor;
+                padding: 0 1em;
+                margin-bottom: 1.5em;
+                font-size: 1.125em;
+                font-weight: bold;
+                display: -webkit-box;
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                height: 108px;
+                max-height: 108px;
+                width: 100%;
+                transition: .2s ease-in;
+                line-height: 1.5em;
+                @include screen("xs_mobile"){
+                    height: auto;
+                }
+            }
+
+            .hospital {
+                position: relative;
+                width: 100%;
+                color: $color-word2;
+                padding: .5em 1em .5em 2.6em;
+                font-size: .938em;
+                line-height: 1.5em;
+                align-self: flex-end;
+                background: rgba($primaryColor, .05);
+                transition: .2s ease-in;
+
+                &:before{
+                    content: "";
+                    position: absolute;
+                    left: 1em;
+                    top: .6em;
+                    display: block;
+                    width: 16px;
+                    height: 16px;
+                    background: url(../images/icon_hospital.svg) center no-repeat;
+                    background-size: 16px;
+                    opacity: .5;
+                    transition: .2s ease-in;
+                }
+                &:after{
+                    content:"";
+                    position: absolute;
+                    left: 1em;
+                    top: 0;
+                    display: block;
+                    width: calc(100% - 2em);
+                    height: 1px;
+                    background: $color-line;
+                    transition: .2s ease-in;
+                }
+            }
+        }
+    }
+    
 }
 
 // .album {
@@ -93,7 +234,7 @@
 //                 flex:0 0 96%;
 //                 margin:0 3% 5%;
 //             }
-            
+
 //         }
 //     }
 // }

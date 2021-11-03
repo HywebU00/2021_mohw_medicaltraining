@@ -71,7 +71,7 @@
                         color: $color-word;
                         font-weight: bold;
                         &:hover, &:focus {
-                            background: $aHover;
+                            background: darken($primaryColor, 10);
                             color: #fff;
                         }
                     }

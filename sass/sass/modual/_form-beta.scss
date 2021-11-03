@@ -522,6 +522,7 @@ select::-ms-expand {
                 color: $color-word2;
                 font-weight: normal;
                 font-size: .875em;
+                padding-top: 0;
             }
 
             .form_content {
@@ -1361,10 +1362,13 @@ select::-ms-expand {
         align-items: center;
 
         &~input,
-        &~textarea {
+        &~textarea,
+        &:not(~input[type="checkbox"]), 
+        &:not(~input[type="radio"]) {
             width: auto;
             vertical-align: middle;
         }
+
     }
 
     input[type="text"],
@@ -1419,6 +1423,7 @@ select::-ms-expand {
     .form_content{
         max-width: 100% !important;
         flex: 0 0 100% !important;
+        margin-bottom: .5em;
     }
 }
 //---------------------------------------------下拉選單--------//

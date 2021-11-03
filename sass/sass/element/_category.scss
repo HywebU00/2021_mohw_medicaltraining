@@ -16,7 +16,7 @@
         display: block;
         color: #333;
         box-sizing: border-box;
-        border-radius:4px;
+        border-radius:.2em;
         &:hover,
         &:focus {
             color: #FFF;
@@ -26,7 +26,8 @@
         }
         &.active {
             color: #FFF;
-            @include gradient(darken($primaryColor, 0), darken($primaryColor, 15), vertical);
+            background: darken($primaryColor, 10);
+            border-color: darken($primaryColor, 10);
         }
         span {
             font-size: .813em;

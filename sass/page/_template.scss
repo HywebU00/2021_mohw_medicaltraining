@@ -1,9 +1,11 @@
 * {
     box-sizing: border-box;
 }
+
 html {
     scroll-behavior: smooth;
 }
+
 body {
     &.noscroll {
         position: static !important;
@@ -15,6 +17,7 @@ body {
         padding: 0;
     }
 }
+
 // 最外圍預設為100%
 .wrapper {
     position: relative;
@@ -22,13 +25,15 @@ body {
     margin: 0px auto;
     background: url(../images/top_bg2.svg) top 150px left no-repeat;
     background-size: 450px;
+
     @include screen('mobile') {
         background: #FFF;
         overflow: hidden;
         overflow-y: auto;
     }
-    &:before{
-        content:"";
+
+    &:before {
+        content: "";
         position: absolute;
         display: block;
         width: calc(1200px + (100% - 1200px) / 2 - 100px);
@@ -36,25 +41,26 @@ body {
         top: 0;
         right: 0;
         background-image: url(../images/bg3.png), url(../images/top_bg1.svg);
-        background-position: top right, bottom left; 
+        background-position: top right, bottom left;
         background-repeat: no-repeat;
         background-size: contain, cover;
         //transform-origin: top right;
 
-        @media screen and (max-width: 1200px){
+        @media screen and (max-width: 1200px) {
             width: calc(100% - 100px);
         }
 
-        @include screen('mobile'){
+        @include screen('mobile') {
             width: 100%;
             height: 300px;
             top: 60px;
         }
-        @include screen('xs_mobile'){
+
+        @include screen('xs_mobile') {
             height: 220px;
         }
 
-        @media screen and (max-width: 400px){
+        @media screen and (max-width: 400px) {
             height: 180px;
         }
     }
@@ -73,20 +79,24 @@ body {
     padding: 0;
     margin: 0 auto;
     max-width: $container-max; //請看_variable.scss
-    @media screen and (max-width: 1200px){
+
+    @media screen and (max-width: 1200px) {
         padding: 0 15px;
     }
 }
+
 .main {
     position: relative;
     margin: 0 auto;
     padding: 2em 0 0 0;
+
     // 可先設定一個中央區塊最大寬，限制accesskey對齊
-    @include screen('mobile'){
+    @include screen('mobile') {
         margin-top: 60px;
     }
-    
+
 }
+
 ////////////////////////////////////////////////////////////
 // 為了與首頁區隔，請在內頁加上innerpage ClassName
 .innerpage {
@@ -94,18 +104,20 @@ body {
         //@include gutter();
         display: flex;
     }
-    h2.title{
+
+    h2.title {
         line-height: 1.25em;
         font-size: 1.875em;
         font-family: 'Century Gothic';
-        text-transform:uppercase;
+        text-transform: uppercase;
         text-align: left;
         color: $color-title;
         position: relative;
         margin: .5em 0 1em 0;
         padding-left: 15px;
-        &:after{
-            content:"";
+
+        &:after {
+            content: "";
             display: block;
             position: absolute;
             width: 4px;
@@ -116,20 +128,29 @@ body {
         }
     }
 
-    
+    h3.title{
+        font-size: 1.5em;
+        line-height: 1.6em;
+        font-family: 'Century Gothic';
+        text-transform: capitalize;
+        padding: .5em 0;
+        border-bottom: 1px solid $primaryColor;
+    }
+
+
     .center_block {
         flex: none;
         flex-basis: 100%;
         max-width: 100%;
         background: #fff;
         border-radius: $rounded-angle;
-        padding: 1em 2em;
+        padding: 1em 2em 2em;
         position: relative;
         min-height: 500px;
         z-index: 2;
         box-shadow: rgba(0, 0, 0, 0.2) 30px -30px 50px -50px, rgba(0, 0, 0, 0.2) -30px -30px 35px -50px;
-        
-        @include screen('mobile'){
+
+        @include screen('mobile') {
             padding: 0 1em;
         }
 
@@ -163,6 +184,7 @@ body {
         //     z-index: 1;
         // }
     }
+
     // .left_block {
     //     flex: none;
     //     flex-basis: 260px;
@@ -192,19 +214,21 @@ body {
     &.small_size {
         font-size: .938em;
     }
+
     &.large_size {
         font-size: 1.125em;
     }
 }
 
-.lp{
+.lp {
     margin-bottom: 2em;
 }
 
 //內頁搜尋區塊
-.searchBlock{
+.searchBlock {
     position: relative;
-    .btn-toggle{
+
+    .btn-toggle {
         width: 170px;
         padding: .5em 4.5em .5em 2em;
         border: none;
@@ -214,101 +238,150 @@ body {
         position: relative;
         overflow: hidden;
         text-transform: uppercase;
-        &:before{
-            content:"";
+
+        &:before {
+            content: "";
             position: absolute;
             right: 0;
             top: 0;
             width: 2.5em;
             height: 100%;
             display: block;
-            background: rgba(0,0,0, .1) url(../images/icon/icon_arrow_down2.svg) center no-repeat;
+            background: rgba(0, 0, 0, .1) url(../images/icon/icon_arrow_down2.svg) center no-repeat;
             background-size: 14px;
         }
-        &.close{
-            &:before{
+
+        &.close {
+            &:before {
                 background-image: url(../images/icon/icon_arrow_up2.svg);
             }
         }
     }
 
-    .search_form{
+    .search_form {
         display: none;
         background: $color-bg2;
         padding: 1em;
         margin: 0;
 
-        .form_grp{
+        .form_grp {
             border-bottom: none;
         }
-        .btn_grp{
+
+        .btn_grp {
             justify-content: left;
-            .btn{
+
+            .btn {
                 min-width: 10em;
-                @include screen('mobile'){
+
+                @include screen('mobile') {
                     flex: 1 1 100%;
                 }
-            }   
+            }
+        }
+
+        .form_content {
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: .3em 0 0 0;
+            }
+            li{
+                margin-bottom: .5em;
+                label{
+                    margin-right: .5em;
+                }
+            }
+        }
+
+        .check_grp {
+            input[type="checkbox"] {
+                display: none;
+
+                &+label {
+                    display: inline-block;
+                    background-color: #fff;
+                    cursor: pointer;
+                    padding: .5em .8em;
+                    border-radius: 0.2em;
+                    border: 1px solid $color-gray;
+                }
+                &:checked + label{
+                    background: $form-focus;
+                    color: #fff;
+                }
+            }
+
         }
     }
 }
 
-.album, .video, .link{
+.album,
+.video,
+.link {
     margin-top: 1em;
-    ul{
+
+    ul {
         @include li-reset;
         display: flex;
         flex-wrap: wrap;
+        margin: 0 -0.8em;
     }
 
-    li{
-        margin: .8em;
-        flex-basis: calc(25% - 1.6em);
-        .thumbnail{
+    li {
+        margin: 1em;
+        flex-basis: calc(25% - 2em);
+
+        .thumbnail {
             height: 100%;
         }
-        @include screen('tablet'){
-            flex-basis: calc(33.33333% - 1.6em);
+
+        @include screen('tablet') {
+            flex-basis: calc(33.33333% - 2em);
         }
-        @include screen('mobile'){
+
+        @include screen('mobile') {
             margin: .5em;
             flex-basis: calc(50% - 1em);
         }
-        @include screen('xs_mobile'){
+
+        @include screen('xs_mobile') {
             margin: 0 0 1em 0;
             flex-basis: 100%;
         }
     }
 
-    .caption{
-        h3{
+    .caption {
+        h3 {
             font-size: 1em;
         }
     }
 }
 
-.video{
-    .thumbnail{
+.video {
+    .thumbnail {
         .img-container {
-            &:after{
-                content:"";
+            &:after {
+                content: "";
                 position: absolute;
                 top: 0;
                 left: 0;
                 display: block;
                 width: 100%;
                 height: 100%;
-                background: rgba(0,0,0, .3) url(../images/basic/icon_play.svg) center no-repeat;
+                background: rgba(0, 0, 0, .3) url(../images/basic/icon_play.svg) center no-repeat;
                 background-size: 50px;
                 opacity: .6;
                 transition: all .3s ease-in;
             }
         }
-        &:hover{
+
+        &:hover {
             box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-            .img-container{
-                &:after{
-                    background-color: rgba(0,0,0, 0.05);
+
+            .img-container {
+                &:after {
+                    background-color: rgba(0, 0, 0, 0.05);
                     opacity: .9;
                 }
             }
@@ -316,23 +389,43 @@ body {
     }
 }
 
-.link{
-    .thumbnail{
-        .img-container{
+//lp_link
+.link {
+    .thumbnail {
+        .img-container {
             @include aspect-ratio(2, 1);
             margin: 0;
-            img{
+
+            img {
                 object-fit: contain;
                 padding: .5em;
             }
         }
-        .caption{
+
+        .caption {
             padding: .5em 1em;
             width: 100%;
             background: $color-bg2;
             text-align: center;
         }
     }
+}
+
+//fancybox樣式更改
+.fancybox-thumbs {
+    top: auto;
+    width: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 95px;
+    padding: 10px 10px 5px 10px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,0.3);
+}
+.fancybox-show-thumbs .fancybox-inner {
+    right: 0;
+    bottom: 95px;
 }
 
 .hidden {

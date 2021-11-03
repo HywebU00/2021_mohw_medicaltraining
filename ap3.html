@@ -13,8 +13,6 @@
     <!-- slick css-->
     <link rel="stylesheet" type="text/css" href="vendor/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="vendor/slick/slick-theme.css" />
-    <!-- fancybox css -->
-    <link rel="stylesheet" href="vendor/facybox/dist/jquery.fancybox.min.css">
     <!-- animate css -->
     <link rel="stylesheet" href="vendor/animate/animate.css">
     <!-- hyUI css -->
@@ -127,186 +125,314 @@
                         <div class="breadcrumb">
                             <ul>
                                 <li><a href="#">Home</a></li>
-                                <li><a href="#">Performance</a></li>
-                                <li>Photo Gallery</li>
+                                <li>Training Site</li>
                             </ul>
                         </div>
-                        <!-- function_panel -->
-                        <div class="function_panel">
-                            <!-- 文字大小 -->
-                            <div class="font_size">
-                                <span>font-size：</span>
-                                <!-- 英文用<span>font-size：</span> -->
-                                <ul>
-                                    <li><a href="#" class="small">A-</a></li>
-                                    <li><a href="#" class="medium">A</a></li>
-                                    <li><a href="#" class="large">A+</a></li>
-                                </ul>
+                    </div>
+                    <h2 class="title">Training Site</h2>
+                    <div class="searchBlock">
+                        <button class="btn-toggle">Search</button>
+                        <div class="flex-form form-column search_form">
+                            <div class="form_grp">
+                                <div class="form_title">Medical Specialties</div>
+                                <div class="form_content">
+                                    <ul class="check_grp form_inline">
+                                        <li>
+                                            <input type="checkbox" id="check01" name="" value="" checked="">
+                                            <label for="check01">Organ Transplant</label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="check02" name="" value="">
+                                            <label for="check02">Cardiac surgery</label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="check15" name="" value="">
+                                            <label for="check15">Cardiac Orthopedics</label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="check03" name="" value="">
+                                            <label for="check03">Gynecology & Obstetrics</label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="check04" name="" value="">
+                                            <label for="check04">Plastic surgery</label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="check05" name="" value="">
+                                            <label for="check05">Neurosurgery</label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="check06" name="" value="">
+                                            <label for="check06">Healthcare Management</label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="check07" name="" value="">
+                                            <label for="check07">Others</label>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-                            <!-- function功能區塊 -->
-                            <div class="function">
-                                <ul>
-                                    <li class="back"><a href="javascript:history.back()">back</a></li>
-                                </ul>
+                            <div class="form_grp">
+                                <label for="" class="form_title" aria-required="true">Hospital Search</label>
+                                <div class="form_content">
+                                    <input type="text" id="" placeholder="please enter keyword">
+                                </div>
+                            </div>
+                            <div class="btn_grp form_inline">
+                                <button class="btn btn-search">Search</button>
+                                <button class="btn btn-reset">Clear</button>
                             </div>
                         </div>
                     </div>
-                    <h2 class="title">Photo Gallery</h2>
                     <section class="lp">
+                        <h3 class="title">Hospitals List</h3>
+                        <div class="category">
+                            <ul>
+                                <li><a href="#" class="active">All</a></li>
+                                <li><a href="#">Northern Taiwan</a></li>
+                                <li><a href="#">Central Taiwan</a></li>
+                                <li><a href="#">Southern Taiwan</a></li>
+                                <li><a href="#">Eastern Taiwan</a></li>
+                            </ul>
+                        </div>
                         <div class="album">
                             <ul>
                                 <li>
                                     <div class="thumbnail">
-                                        <a href="images/demo/01.jpg" data-fancybox="images" data-caption="第1張圖說">
+                                        <a href="#">
                                             <div class="img-container">
                                                 <!-- 此範例為4:3比例 -->
-                                                <img class="lazy" data-src="images/demo/01.jpg" alt="">
+                                                <picture>
+                                                    <source media="(min-width: 1200px)" data-srcset="images/demo/01.jpg" srcset="images/demo/01.jpg">
+                                                    <source media="(min-width: 992px)" data-srcset="images/demo/01.jpg" srcset="images/demo/01.jpg">
+                                                    <source media="(min-width: 576px)" data-srcset="images/demo/01.jpg" srcset="images/demo/01.jpg">
+                                                    <source media="(max-width: 575px)" data-srcset="images/demo/01.jpg" srcset="images/demo/01.jpg">
+                                                    <img data-src="images/demo/01.jpg" class="lazy loaded" alt="第1張圖說" src="images/demo/01.jpg" data-was-processed="true">
+                                                    <noscript><img src="images/demo/01.jpg"></noscript>
+                                                </picture>
                                             </div>
                                             <div class="caption">
-                                                <h3>Buddhist Tzu Chi General Hospital</h3>
+                                                <h3>National Taiwan University Hospital</h3>
                                             </div>
                                         </a>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="thumbnail">
-                                        <a href="images/demo/02.jpg" data-fancybox="images" data-caption="第2張圖說">
+                                        <a href="#">
                                             <div class="img-container">
                                                 <!-- 此範例為4:3比例 -->
-                                                <img class="lazy" data-src="images/demo/02.jpg" alt="">
+                                                <picture>
+                                                    <source media="(min-width: 1200px)" data-srcset="images/demo/02.jpg" srcset="images/demo/02.jpg">
+                                                    <source media="(min-width: 992px)" data-srcset="images/demo/02.jpg" srcset="images/demo/02.jpg">
+                                                    <source media="(min-width: 576px)" data-srcset="images/demo/02.jpg" srcset="images/demo/02.jpg">
+                                                    <source media="(max-width: 575px)" data-srcset="images/demo/02.jpg" srcset="images/demo/02.jpg">
+                                                    <img data-src="images/demo/02.jpg" class="lazy loaded" alt="第2張圖說" src="images/demo/02.jpg" data-was-processed="true">
+                                                    <noscript><img src="images/demo/02.jpg"></noscript>
+                                                </picture>
                                             </div>
                                             <div class="caption">
-                                                <h3>Chi Mei Hospital</h3>
+                                                <h3>Tri-Service General Hospital</h3>
                                             </div>
                                         </a>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="thumbnail">
-                                        <a href="images/demo/03.jpg" data-fancybox="images" data-caption="第3張圖說">
+                                        <a href="#">
                                             <div class="img-container">
                                                 <!-- 此範例為4:3比例 -->
-                                                <img class="lazy" data-src="images/demo/03.jpg" alt="">
+                                                <picture>
+                                                    <source media="(min-width: 1200px)" data-srcset="images/demo/03.jpg" srcset="images/demo/03.jpg">
+                                                    <source media="(min-width: 992px)" data-srcset="images/demo/03.jpg" srcset="images/demo/03.jpg">
+                                                    <source media="(min-width: 576px)" data-srcset="images/demo/03.jpg" srcset="images/demo/03.jpg">
+                                                    <source media="(max-width: 575px)" data-srcset="images/demo/03.jpg" srcset="images/demo/03.jpg">
+                                                    <img data-src="images/demo/03.jpg" class="lazy loaded" alt="第3張圖說" src="images/demo/03.jpg" data-was-processed="true">
+                                                    <noscript><img src="images/demo/03.jpg"></noscript>
+                                                </picture>
                                             </div>
                                             <div class="caption">
-                                                <h3>Buddhist Tzu Chi General Hospital</h3>
+                                                <h3>Taipei Veterans General Hospital</h3>
                                             </div>
                                         </a>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="thumbnail">
-                                        <a href="images/demo/04.jpg" data-fancybox="images" data-caption="第4張圖說">
+                                        <a href="#">
                                             <div class="img-container">
                                                 <!-- 此範例為4:3比例 -->
-                                                <img class="lazy" data-src="images/demo/04.jpg" alt="">
+                                                <picture>
+                                                    <source media="(min-width: 1200px)" data-srcset="images/demo/04.jpg" srcset="images/demo/04.jpg">
+                                                    <source media="(min-width: 992px)" data-srcset="images/demo/04.jpg" srcset="images/demo/04.jpg">
+                                                    <source media="(min-width: 576px)" data-srcset="images/demo/04.jpg" srcset="images/demo/04.jpg">
+                                                    <source media="(max-width: 575px)" data-srcset="images/demo/04.jpg" srcset="images/demo/04.jpg">
+                                                    <img data-src="images/demo/04.jpg" class="lazy loaded" alt="第4張圖說" src="images/demo/04.jpg" data-was-processed="true">
+                                                    <noscript><img src="images/demo/04.jpg"></noscript>
+                                                </picture>
                                             </div>
                                             <div class="caption">
-                                                <h3>Chi Mei Hospital</h3>
+                                                <h3>MacKay Memorial Hospital</h3>
                                             </div>
                                         </a>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="thumbnail">
-                                        <a href="images/demo/05.jpg" data-fancybox="images" data-caption="第5張圖說">
+                                        <a href="#">
                                             <div class="img-container">
                                                 <!-- 此範例為4:3比例 -->
-                                                <img class="lazy" data-src="images/demo/05.jpg" alt="">
+                                                <picture>
+                                                    <source media="(min-width: 1200px)" data-srcset="images/demo/01.jpg" srcset="images/demo/01.jpg">
+                                                    <source media="(min-width: 992px)" data-srcset="images/demo/01.jpg" srcset="images/demo/01.jpg">
+                                                    <source media="(min-width: 576px)" data-srcset="images/demo/01.jpg" srcset="images/demo/01.jpg">
+                                                    <source media="(max-width: 575px)" data-srcset="images/demo/01.jpg" srcset="images/demo/01.jpg">
+                                                    <img data-src="images/demo/01.jpg" class="lazy loaded" alt="第1張圖說" src="images/demo/01.jpg" data-was-processed="true">
+                                                    <noscript><img src="images/demo/01.jpg"></noscript>
+                                                </picture>
                                             </div>
                                             <div class="caption">
-                                                <h3>Buddhist Tzu Chi General Hospital</h3>
+                                                <h3>National Taiwan University Hospital</h3>
                                             </div>
                                         </a>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="thumbnail">
-                                        <a href="images/demo/06.jpg" data-fancybox="images" data-caption="第6張圖說">
+                                        <a href="#">
                                             <div class="img-container">
                                                 <!-- 此範例為4:3比例 -->
-                                                <img class="lazy" data-src="images/demo/06.jpg" alt="">
+                                                <picture>
+                                                    <source media="(min-width: 1200px)" data-srcset="images/demo/02.jpg" srcset="images/demo/02.jpg">
+                                                    <source media="(min-width: 992px)" data-srcset="images/demo/02.jpg" srcset="images/demo/02.jpg">
+                                                    <source media="(min-width: 576px)" data-srcset="images/demo/02.jpg" srcset="images/demo/02.jpg">
+                                                    <source media="(max-width: 575px)" data-srcset="images/demo/02.jpg" srcset="images/demo/02.jpg">
+                                                    <img data-src="images/demo/02.jpg" class="lazy loaded" alt="第2張圖說" src="images/demo/02.jpg" data-was-processed="true">
+                                                    <noscript><img src="images/demo/02.jpg"></noscript>
+                                                </picture>
                                             </div>
                                             <div class="caption">
-                                                <h3>Chi Mei Hospital</h3>
+                                                <h3>Tri-Service General Hospital</h3>
                                             </div>
                                         </a>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="thumbnail">
-                                        <a href="images/demo/07.jpg" data-fancybox="images" data-caption="第7張圖說">
+                                        <a href="#">
                                             <div class="img-container">
                                                 <!-- 此範例為4:3比例 -->
-                                                <img class="lazy" data-src="images/demo/07.jpg" alt="">
+                                                <picture>
+                                                    <source media="(min-width: 1200px)" data-srcset="images/demo/03.jpg" srcset="images/demo/03.jpg">
+                                                    <source media="(min-width: 992px)" data-srcset="images/demo/03.jpg" srcset="images/demo/03.jpg">
+                                                    <source media="(min-width: 576px)" data-srcset="images/demo/03.jpg" srcset="images/demo/03.jpg">
+                                                    <source media="(max-width: 575px)" data-srcset="images/demo/03.jpg" srcset="images/demo/03.jpg">
+                                                    <img data-src="images/demo/03.jpg" class="lazy loaded" alt="第3張圖說" src="images/demo/03.jpg" data-was-processed="true">
+                                                    <noscript><img src="images/demo/03.jpg"></noscript>
+                                                </picture>
                                             </div>
                                             <div class="caption">
-                                                <h3>Buddhist Tzu Chi General Hospital</h3>
+                                                <h3>Taipei Veterans General Hospital</h3>
                                             </div>
                                         </a>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="thumbnail">
-                                        <a href="images/demo/08.jpg" data-fancybox="images" data-caption="第8張圖說">
+                                        <a href="#">
                                             <div class="img-container">
                                                 <!-- 此範例為4:3比例 -->
-                                                <img class="lazy" data-src="images/demo/08.jpg" alt="">
+                                                <picture>
+                                                    <source media="(min-width: 1200px)" data-srcset="images/demo/04.jpg" srcset="images/demo/04.jpg">
+                                                    <source media="(min-width: 992px)" data-srcset="images/demo/04.jpg" srcset="images/demo/04.jpg">
+                                                    <source media="(min-width: 576px)" data-srcset="images/demo/04.jpg" srcset="images/demo/04.jpg">
+                                                    <source media="(max-width: 575px)" data-srcset="images/demo/04.jpg" srcset="images/demo/04.jpg">
+                                                    <img data-src="images/demo/04.jpg" class="lazy loaded" alt="第4張圖說" src="images/demo/04.jpg" data-was-processed="true">
+                                                    <noscript><img src="images/demo/04.jpg"></noscript>
+                                                </picture>
                                             </div>
                                             <div class="caption">
-                                                <h3>Buddhist Tzu Chi General Hospital</h3>
+                                                <h3>MacKay Memorial Hospital</h3>
                                             </div>
                                         </a>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="thumbnail">
-                                        <a href="images/demo/09.jpg" data-fancybox="images" data-caption="第9張圖說">
+                                        <a href="#">
                                             <div class="img-container">
                                                 <!-- 此範例為4:3比例 -->
-                                                <img class="lazy" data-src="images/demo/09.jpg" alt="">
+                                                <picture>
+                                                    <source media="(min-width: 1200px)" data-srcset="images/demo/01.jpg" srcset="images/demo/01.jpg">
+                                                    <source media="(min-width: 992px)" data-srcset="images/demo/01.jpg" srcset="images/demo/01.jpg">
+                                                    <source media="(min-width: 576px)" data-srcset="images/demo/01.jpg" srcset="images/demo/01.jpg">
+                                                    <source media="(max-width: 575px)" data-srcset="images/demo/01.jpg" srcset="images/demo/01.jpg">
+                                                    <img data-src="images/demo/01.jpg" class="lazy loaded" alt="第1張圖說" src="images/demo/01.jpg" data-was-processed="true">
+                                                    <noscript><img src="images/demo/01.jpg"></noscript>
+                                                </picture>
                                             </div>
                                             <div class="caption">
-                                                <h3>Buddhist Tzu Chi General Hospital</h3>
+                                                <h3>National Taiwan University Hospital</h3>
                                             </div>
                                         </a>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="thumbnail">
-                                        <a href="images/demo/10.jpg" data-fancybox="images" data-caption="第10張圖說">
+                                        <a href="#">
                                             <div class="img-container">
                                                 <!-- 此範例為4:3比例 -->
-                                                <img class="lazy" data-src="images/demo/10.jpg" alt="">
+                                                <picture>
+                                                    <source media="(min-width: 1200px)" data-srcset="images/demo/02.jpg" srcset="images/demo/02.jpg">
+                                                    <source media="(min-width: 992px)" data-srcset="images/demo/02.jpg" srcset="images/demo/02.jpg">
+                                                    <source media="(min-width: 576px)" data-srcset="images/demo/02.jpg" srcset="images/demo/02.jpg">
+                                                    <source media="(max-width: 575px)" data-srcset="images/demo/02.jpg" srcset="images/demo/02.jpg">
+                                                    <img data-src="images/demo/02.jpg" class="lazy loaded" alt="第2張圖說" src="images/demo/02.jpg" data-was-processed="true">
+                                                    <noscript><img src="images/demo/02.jpg"></noscript>
+                                                </picture>
                                             </div>
                                             <div class="caption">
-                                                <h3>Buddhist Tzu Chi General Hospital</h3>
+                                                <h3>Tri-Service General Hospital</h3>
                                             </div>
                                         </a>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="thumbnail">
-                                        <a href="images/demo/11.jpg" data-fancybox="images" data-caption="第11張圖說">
+                                        <a href="#">
                                             <div class="img-container">
                                                 <!-- 此範例為4:3比例 -->
-                                                <img class="lazy" data-src="images/demo/11.jpg" alt="">
+                                                <picture>
+                                                    <source media="(min-width: 1200px)" data-srcset="images/demo/03.jpg" srcset="images/demo/03.jpg">
+                                                    <source media="(min-width: 992px)" data-srcset="images/demo/03.jpg" srcset="images/demo/03.jpg">
+                                                    <source media="(min-width: 576px)" data-srcset="images/demo/03.jpg" srcset="images/demo/03.jpg">
+                                                    <source media="(max-width: 575px)" data-srcset="images/demo/03.jpg" srcset="images/demo/03.jpg">
+                                                    <img data-src="images/demo/03.jpg" class="lazy loaded" alt="第3張圖說" src="images/demo/03.jpg" data-was-processed="true">
+                                                    <noscript><img src="images/demo/03.jpg"></noscript>
+                                                </picture>
                                             </div>
                                             <div class="caption">
-                                                <h3>Buddhist Tzu Chi General Hospital</h3>
+                                                <h3>Taipei Veterans General Hospital</h3>
                                             </div>
                                         </a>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="thumbnail">
-                                        <a href="images/demo/12.jpg" data-fancybox="images" data-caption="第12張圖說">
+                                        <a href="#">
                                             <div class="img-container">
                                                 <!-- 此範例為4:3比例 -->
-                                                <img class="lazy" data-src="images/demo/12.jpg" alt="">
+                                                <picture>
+                                                    <source media="(min-width: 1200px)" data-srcset="images/demo/04.jpg" srcset="images/demo/04.jpg">
+                                                    <source media="(min-width: 992px)" data-srcset="images/demo/04.jpg" srcset="images/demo/04.jpg">
+                                                    <source media="(min-width: 576px)" data-srcset="images/demo/04.jpg" srcset="images/demo/04.jpg">
+                                                    <source media="(max-width: 575px)" data-srcset="images/demo/04.jpg" srcset="images/demo/04.jpg">
+                                                    <img data-src="images/demo/04.jpg" class="lazy loaded" alt="第4張圖說" src="images/demo/04.jpg" data-was-processed="true">
+                                                    <noscript><img src="images/demo/04.jpg"></noscript>
+                                                </picture>
                                             </div>
                                             <div class="caption">
-                                                <h3>Buddhist Tzu Chi General Hospital</h3>
+                                                <h3>MacKay Memorial Hospital</h3>
                                             </div>
                                         </a>
                                     </div>
@@ -436,7 +562,6 @@
     <script src="vendor/slick/slick.min.js "></script><!-- slick -->
     <script src="vendor/slick/slick-lightbox.js "></script><!-- slick lightbox -->
     <script src="vendor/lazyload/lazyload.js"></script><!-- lazyload -->
-    <script src="vendor/facybox/dist/jquery.fancybox.min.js"></script>
     <script src="vendor/picturefill/picturefill.min.js" async></script><!-- picturefill -->
     <script src="vendor/scrolltable/jquery.scroltable.min.js"></script><!-- scrolltable -->
     <!-- hyUI -->

@@ -70,12 +70,7 @@
   width: 100%;
   margin: 0 auto 2em;
   @include clearfix();
-  h3 {
-    font-size: 1.5em;
-    padding: 12px 0px 15px 0px;
-    margin: 0.5em 0px 0.2em;
-    border-bottom: 1px solid $primaryColor;
-  }
+
   ul{
     padding: 0;
     margin: 1.5em 0 0 0;
@@ -87,13 +82,13 @@
     a{
       padding: .25em 1em;
       display: block;
-      background: $secondaryColor;
+      background: $aColor;
       border-radius: 4px;
       color: #fff;
       line-height: 1.5em;
       transition: .2s ease-in;
-      &:hover{
-        background: darken($secondaryColor, 10);
+      &:hover, &:focus{
+        background: $aHover;
         color:#fff;
       }
     }
@@ -105,12 +100,7 @@
   width: 100%;
   margin: 0 auto 2em;
   @include clearfix();
-  h3 {
-    font-size: 1.5em;
-    padding: 12px 0px 15px 0px;
-    margin: 0.5em 0px 0.2em;
-    border-bottom: 1px solid $primaryColor;
-  }
+
   ul {
     list-style-type: none;
     padding: 0;
@@ -254,12 +244,6 @@
 .web_link {
   margin: 1em 0;
   @extend %clearfix;
-  h3 {
-    font-size: 1.5em;
-    padding: 12px 0px 15px 0px;
-    margin: 0.5em 0px 0.2em;
-    border-bottom: 1px solid $primaryColor;
-  }
   ol,
   ul {
     list-style-type: none;
