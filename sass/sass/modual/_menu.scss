@@ -354,11 +354,11 @@
             li {
                 margin-right: .5em;
                 box-sizing: border-box;
-                &:nth-child(odd):last-child {
-                    width: 100%;
-                }
+                // &:nth-child(odd):last-child {
+                //     width: 100%;
+                // }
                 a {
-                    display: block;
+                    display: flex;
                     height: 3em;
                     width: 3em;
                     //padding: .25em;
@@ -367,6 +367,9 @@
                     font-weight: bold;
                     text-decoration: none;
                     box-sizing: border-box;
+                    align-items: center;
+                    justify-content: center;
+
                     &:hover,
                     &:focus {
                         background: darken($primaryColor, 20);
