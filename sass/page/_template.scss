@@ -102,7 +102,7 @@ body {
 .innerpage {
     >.container {
         //@include gutter();
-        display: flex;
+        //display: flex;
     }
 
     h2.title {
@@ -128,7 +128,7 @@ body {
         }
     }
 
-    h3.title{
+    h3.title {
         font-size: 1.5em;
         line-height: 1.6em;
         font-family: 'Century Gothic';
@@ -139,8 +139,8 @@ body {
 
 
     .center_block {
-        flex: none;
-        flex-basis: 100%;
+        // flex: none;
+        // flex-basis: 100%;
         max-width: 100%;
         background: #fff;
         border-radius: $rounded-angle;
@@ -286,9 +286,11 @@ body {
                 padding: 0;
                 margin: .3em 0 0 0;
             }
-            li{
+
+            li {
                 margin-bottom: .5em;
-                label{
+
+                label {
                     margin-right: .5em;
                 }
             }
@@ -306,7 +308,8 @@ body {
                     border-radius: 0.2em;
                     border: 1px solid $color-gray;
                 }
-                &:checked + label{
+
+                &:checked+label {
                     background: $form-focus;
                     color: #fff;
                 }
@@ -411,6 +414,79 @@ body {
     }
 }
 
+
+//進度條
+.process_step {
+    margin: 2em auto;
+
+    ul {
+        @include li-reset;
+        display: flex;
+        justify-content: center;
+        counter-reset: step;
+    }
+
+    li {
+        position: relative;
+        text-align: center;
+        width: 20%;
+        //max-width: 250px;
+        color: $color-word2;
+
+        &:before {
+            counter-increment: step;
+            content: counter(step);
+            width: 36px;
+            line-height: 36px;
+            display: block;
+            color: #fff;
+            background: #888;
+            border-radius: 30px;
+            margin: 0 auto 5px auto;
+            z-index: 1;
+            border: 4px solid $color-line;
+            position: relative;
+            font-weight: bold;
+        }
+
+        &:not(:first-child):after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 17px;
+            left: -50%;
+            height: 6px;
+            width: 100%;
+            background: $color-line;
+            z-index: 0;
+        }
+
+        &.done {
+            color: $secondaryColor;
+            font-weight: bold;
+
+            &:before {
+                background: $secondaryColor;
+                border-color: lighten($secondaryColor, 20);
+            }
+
+            &:not(:first-child):after {
+                background: lighten($secondaryColor, 20);
+            }
+        }
+    }
+}
+
+.contact_form {
+    padding: 2em 4em;
+    background: #f7f7f7 url(../images/contact_bg.jpg) right top no-repeat;
+    background-size: cover;
+    @include screen('mobile'){
+        padding: 1em;
+    }
+}
+
+
 //fancybox樣式更改
 .fancybox-thumbs {
     top: auto;
@@ -421,8 +497,9 @@ body {
     height: 95px;
     padding: 10px 10px 5px 10px;
     box-sizing: border-box;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0, 0, 0, 0.3);
 }
+
 .fancybox-show-thumbs .fancybox-inner {
     right: 0;
     bottom: 95px;

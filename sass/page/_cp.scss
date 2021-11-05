@@ -287,14 +287,14 @@
   box-sizing: border-box;
 
   li {
-    flex:1 1 calc(100% / 3);
+    flex:1 1 33.33333%;
     margin: .25em 0;
 
     @include screen('tablet') {
-      flex:1 1 calc(100% / 2);
+      flex:1 1 50%;
     }
     @include screen('mobile') {
-      flex:1 1 calc(100% / 1);
+      flex:1 1 100%;
     }
   }
 }

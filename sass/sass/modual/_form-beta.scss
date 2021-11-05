@@ -18,8 +18,6 @@ $m-gutter: 4px;           // Flex grid system default margin
     // }
 }
 
-.R{ color: #bf0000; }
-.B{ color: #0541b1; }
 
 // %mix-col {
 //     align-items: flex-start;
@@ -1228,6 +1226,7 @@ select::-ms-expand {
 
     .btn_grp {
         justify-content: center;
+        margin: 1.5em 0;
 
         .btn,
         .btn-reset,
@@ -1494,7 +1493,7 @@ input[type="text"],
 input[type="password"],
 input[type="file"],
 input[type="tel"],
-input[type="mail"],
+input[type="email"],
 input[type="number"] {
     &::-webkit-input-placeholder {
         /* Chrome/Opera/Safari */
