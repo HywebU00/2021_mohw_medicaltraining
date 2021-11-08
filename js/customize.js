@@ -3,7 +3,7 @@ $(function() {
     // 首頁輪播
     $('.mpSlider').slick({
         mobileFirst: true,
-        dots: false,
+        dots: true,
         arrows: true,
         infinite: true,
         speed: 500,
@@ -20,7 +20,7 @@ $(function() {
     // 廣告輪播
     $('.adSlider').slick({
         mobileFirst: true,
-        dots: false,
+        dots: true,
         infinite: true,
         speed: 300,
         slidesToShow: 2,
@@ -56,7 +56,7 @@ $(function() {
 
     $('.cp_slider').slick({
         mobileFirst: true,
-        dots: false,
+        dots: true,
         arrows: true,
         infinite: true,
         speed: 500,
@@ -72,7 +72,7 @@ $(function() {
     });
 
     $('.cppic_slider').slick({
-        dots: false,
+        dots: true,
         infinite: false,
         speed: 500,
         slidesToShow: 4,
@@ -110,7 +110,7 @@ $(function() {
         }]
     });
     $('.photo_slider').slick({
-        dots: false,
+        dots: true,
         infinite: false,
         speed: 500,
         slidesToShow: 3,
