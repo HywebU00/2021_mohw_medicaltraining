@@ -429,9 +429,12 @@ body {
     li {
         position: relative;
         text-align: center;
-        width: 20%;
-        //max-width: 250px;
+        flex-basis: 20%;
+        max-width: 250px;
         color: $color-word2;
+        @include screen('tablet'){
+            flex: 1 1 33.33333%;
+        }
 
         &:before {
             counter-increment: step;
@@ -483,6 +486,20 @@ body {
     background-size: cover;
     @include screen('mobile'){
         padding: 1em;
+    }
+}
+
+.step_content{
+    margin: 4em 0;
+    text-align: center;
+    .step_img{
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    .step_remind{
+        font-size: 1.125em;
+        font-weight: bold;
+        margin: 1em 0;
     }
 }
 
