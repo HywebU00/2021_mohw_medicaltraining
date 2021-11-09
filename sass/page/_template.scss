@@ -509,6 +509,17 @@ body {
         font-weight: bold;
         margin: 1em 0;
     }
+    .step_note{
+        text-align: left;
+        margin:  1em auto;
+        width: 90%;
+        @include screen('mobile'){
+            width: 100%;
+        }
+        ul, ol{
+            padding-left: 1.5em;
+        }
+    }
 }
 
 .applyBlock{

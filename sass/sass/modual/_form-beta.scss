@@ -1237,6 +1237,11 @@ select::-ms-expand {
         input[type="search"] {
             margin: .3em;
         }
+
+        .btn-reset,
+        .btn-submit{
+            min-width: 8em;
+        }
     }
 
     .btn,
@@ -1263,6 +1268,11 @@ select::-ms-expand {
             flex-wrap: wrap;
         }
 
+    }
+    .form_grp{
+        &.check_grp{
+            padding: .65em 0;
+        }
     }
 
     .check_grp,
