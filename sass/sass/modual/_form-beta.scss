@@ -1421,7 +1421,7 @@ select::-ms-expand {
     .form_title,
     .form_content{
         max-width: 100% !important;
-        flex: 0 0 100% !important;
+        flex: 0 0 100%;
         margin-bottom: .5em;
     }
 }
@@ -1448,7 +1448,7 @@ legend {
     }
 
     &.label_hidden {
-        font-size: 0;
+        font-size: 0 !important;
         line-height: 1;
         width: 0;
         flex-basis: 0 !important;
