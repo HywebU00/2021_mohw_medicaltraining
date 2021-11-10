@@ -497,11 +497,7 @@ body {
 }
 
 .applyBlock{
-    // h3.title{
-    //     text-align: center;
-    //     border: none;
-    //     padding: 0;
-    // }
+    overflow: hidden;
     .text_content{
         background: $color-bg2;
         padding: 1em 2em;
@@ -529,6 +525,10 @@ body {
         margin: 1em 0;
         color: $color-red;
         line-height: 1.8em;
+    }
+
+    .btn-hideInfo{
+        float: right;
     }
 }
 
