@@ -225,36 +225,6 @@ body {
 .searchBlock {
     position: relative;
 
-    .btn-toggle {
-        width: 170px;
-        padding: .5em 4.5em .5em 2em;
-        border: none;
-        background: $primaryColor;
-        color: #fff;
-        margin: 1em 0;
-        position: relative;
-        overflow: hidden;
-        text-transform: uppercase;
-
-        &:before {
-            content: "";
-            position: absolute;
-            right: 0;
-            top: 0;
-            width: 2.5em;
-            height: 100%;
-            display: block;
-            background: rgba(0, 0, 0, .1) url(../images/icon/icon_arrow_down2.svg) center no-repeat;
-            background-size: 14px;
-        }
-
-        &.close {
-            &:before {
-                background-image: url(../images/icon/icon_arrow_up2.svg);
-            }
-        }
-    }
-
     .search_form {
         display: none;
         background: $color-bg2;
@@ -263,6 +233,10 @@ body {
 
         .form_grp {
             border-bottom: none;
+            .form_title{
+                padding: 0;
+                margin-bottom: 0;
+            }
         }
 
         .btn_grp {
