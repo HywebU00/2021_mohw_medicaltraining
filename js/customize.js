@@ -205,6 +205,36 @@ $(function() {
         $(this).stop(true, true).toggleClass('close');
     });
 
+    // hide/show personal info
+    $('.btn-hideInfo').click(function(e) {
+        $(this).stop(true, true).toggleClass('hide');
+        $('.search_form').stop(true, true).slideToggle(function() {
+            if ($(this).is(':visible')) {
+                $('.btn-toggle').html("CLOSE");
+                $('.btn-toggle').attr('name', 'CLOSE');
+            } else {
+                $('.btn-toggle').html("SEARCH");
+                $('.btn-toggle').attr('name', 'SEARCH');
+            }
+        });
+
+    });
+
+    function deIdentification(str) {
+        const showLen = Math.round(str.length / 2); // 顯示幾個
+        const markLen = str.length - showLen; // 要隱藏幾個
+        const showStart = Math.round((str.length - showLen) / 2); // 從哪開始隱
+        return str.replace(str.substr(showStart, markLen), '*'.repeat(markLen));
+    }
+    var mask_text = $(".mask_text")
+    mask_text.each(function() {
+        var new_text = $(this).text()
+        var inntext = deIdentification(new_text)
+        $(this).text(inntext)
+    })
+
+
+
 });
 
 //svg 變色
