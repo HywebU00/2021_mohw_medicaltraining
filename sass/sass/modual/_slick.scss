@@ -289,50 +289,84 @@
     //     padding-bottom: 0;
     // }
 
+    a {
+        display: block;
+
+
+        @include screen('tablet') {
+            margin-bottom: 80px;
+        }
+
+        .caption {
+            position: absolute;
+            left: 0;
+            top: calc(50% - 90px);
+            height: 180px;
+            max-height: 180px;
+            max-width: 320px;
+            z-index: 10;
+            font-size: 2em;
+            line-height: 1.4em;
+            letter-spacing: 1px;
+            font-family: 'Century Gothic';
+            text-align: left;
+            text-transform: capitalize;
+            margin: .5em 0;
+            padding: 0;
+            font-weight: bold;
+            color: $secondaryColor;
+            background: linear-gradient(35deg, $primaryColor, $secondaryColor);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            white-space: normal;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+
+            @include screen('tablet') {
+                max-width: 100%;
+                top: calc(100% + 30px);
+                left: 6px;
+                font-size: 1.25em;
+                margin: 0;
+                height: 3em;
+                -webkit-line-clamp: 2;
+            }
+        }
+        &.slick-current {
+            img {
+                transform: scale(1.05);
+                animation-name: imgdynamic;
+                animation-duration: 5s;
+            }
+        }
+    }
+
     .img-container {
-        @include aspect-ratio(3, 1); //PC版比例
+        overflow: hidden;
+        border: 8px solid #fff;
+        background: #fff;
+        border-radius: 16px;
+        margin-left: 250px;
+        width: calc(100% - 250px);
+        box-shadow: rgba(0, 0, 0, 0.2) -15px 0px 20px -19px, rgba(0, 0, 0, 0.2) 15px 0px 20px -19px;
+
+        @include aspect-ratio(5, 2); //PC版比例
+
+        @include screen('tablet') {
+            width: 100%;
+            margin-left: 0;
+            overflow: hidden;
+        }
 
         @include screen('mobile') {
             border-width: 6px;
         }
 
-        a {
-            display: block;
-            border: 8px solid #fff;
-            background: #fff;
-            border-radius: 16px;
-            margin-left: 250px;
-            width: calc(100% - 250px);
-            box-shadow: rgba(0, 0, 0, 0.2) -15px 0px 20px -19px, rgba(0, 0, 0, 0.2) 15px 0px 20px -19px;
-
-            .caption {
-                left: -250px;
-                top:calc(50% - 90px);
-                height: 180px;
-                max-height: 180px;
-                max-width: 320px;
-                z-index: 10;
-                font-size: 2em;
-                line-height: 1.4em;
-                letter-spacing: 1px;
-                font-family: 'Century Gothic';
-                text-align: left;
-                text-transform: capitalize;
-                margin: .5em 0;
-                padding: 0;
-                font-weight: bold;
-                color: $secondaryColor;
-                background: linear-gradient(35deg, $primaryColor, $secondaryColor);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                white-space: normal;
-                display: -webkit-box;
-                -webkit-line-clamp: 4;
-                -webkit-box-orient: vertical;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-        }
+        
 
         img {
             object-fit: cover;
@@ -341,9 +375,16 @@
 
     }
 
-    .slick-dots{
-        width: calc(100% - 250px); 
-        left: auto; 
+
+
+    .slick-dots {
+        width: calc(100% - 250px);
+        left: auto;
+
+        @include screen('tablet') {
+            width: 100%;
+            bottom: 60px;
+        }
     }
 
     .slick-list {
@@ -360,12 +401,13 @@
         opacity: .7;
 
         @include screen('tablet') {
-            top: calc(50% - 20px);
+            top: 25%;
         }
     }
 
     .slick-prev {
         left: 258px;
+
         @include screen('tablet') {
             left: -5px;
         }
@@ -373,6 +415,7 @@
 
     .slick-next {
         left: 308px;
+
         @include screen('tablet') {
             left: auto;
             right: -5px;
@@ -862,5 +905,15 @@
 
     .slick-dots {
         display: none !important;
+    }
+}
+
+@keyframes imgdynamic {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.05);
     }
 }
