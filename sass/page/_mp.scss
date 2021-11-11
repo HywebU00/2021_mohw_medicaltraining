@@ -104,8 +104,8 @@ a.more {
     }
 
     .mpSlider{
-        width: calc(100% - 250px);
-        margin-left: -50px;
+        width: 100%;
+        //margin-left: -50px;
         @include screen('tablet'){
             width: 100%;
             margin-left: 0;

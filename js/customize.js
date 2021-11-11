@@ -7,7 +7,7 @@ $(function() {
         arrows: true,
         infinite: true,
         speed: 500,
-        autoplay: true,
+        autoplay: false,
         fade: true,
         lazyLoaded: true,
         lazyLoad: 'ondemand',
@@ -191,6 +191,7 @@ $(function() {
         });
     });
 
+
     // search開關
     $('.btn-toggle').click(function(e) {
         $('.search_form').stop(true, true).slideToggle(function() {
@@ -207,38 +208,45 @@ $(function() {
 
     // hide/show personal info
     $('.btn-hideInfo').click(function(e) {
-        $(this).stop(true, true).toggleClass('hide');
-        $('.search_form').stop(true, true).slideToggle(function() {
-            if ($(this).is(':visible')) {
-                $('.btn-toggle').html("CLOSE");
-                $('.btn-toggle').attr('name', 'CLOSE');
-            } else {
-                $('.btn-toggle').html("SEARCH");
-                $('.btn-toggle').attr('name', 'SEARCH');
-            }
-        });
+        $(this).stop(true, true).addClass('hide');
+
+
+
+        function deIdentification(str) {
+            const showLen = 5; // 顯示幾個
+            const markLen = str.length - showLen; // 要隱藏幾個
+            const showStart = 5; // 從哪開始隱
+            return str.replace(str.substr(showStart, markLen), '*'.repeat(markLen));
+        }
+
+        var mask_text = $(".mask_text")
+
+
+
+        mask_text.each(function() {
+            var new_text = $(this).text()
+            var inntext = deIdentification(new_text);
+            //$(this).clone().prependTo('.form_content');
+            $(this).text(inntext)
+        })
+        // if ($(this).find('hide')) {
+        //     $('.btn-hideInfo').html("Show Personal Info");
+        //     $('.btn-hideInfo').attr('name', 'Show Personal Info');
+        // } else {
+        //     $('.btn-hideInfo').html("Hide Personal Info");
+        //     $('.btn-hideInfo').attr('name', 'Hide Personal Info');
+        // }
 
     });
 
-    // function deIdentification(str) {
-    //     const showLen = Math.round(str.length / 2); // 顯示幾個
-    //     const markLen = str.length - showLen; // 要隱藏幾個
-    //     const showStart = Math.round((str.length - showLen) / 2); // 從哪開始隱
-    //     return str.replace(str.substr(showStart, markLen), '*'.repeat(markLen));
-    // }
-    // var mask_text = $(".mask_text")
-    // mask_text.each(function() {
-    //     var new_text = $(this).text()
-    //     var inntext = deIdentification(new_text)
-    //     $(this).text(inntext)
-    // })
 
 
 
 });
 
-//svg 變色
 
+
+//svg 變色
 jQuery('img.svg').each(function() {
     var $img = jQuery(this);
     var imgID = $img.attr('id');
