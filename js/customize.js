@@ -240,8 +240,11 @@ $(function() {
 
     });
 
-
-
+    var _dot = $('.cp_slider .slick-dots').children('li');
+    var _dotAmount = _dot.length;
+    if (_dotAmount == 1 ){
+        _dot.hide();
+    }
 
 });
 
